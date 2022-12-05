@@ -14,6 +14,16 @@ public class Main {
         }
     }
 
+    /*
+    int knnchn(int e){ // e = number of months
+        if (e > 0){
+
+        } else {
+            return 1; // Placeholder
+        }
+    }
+     */
+
     void results(){
         System.out.println("Please enter the double.");
         double b = scn2.nextDouble();
