@@ -24,6 +24,24 @@ public class Main {
         }
     }
 
+    int fact(int e){
+        if (e > 0){
+            return e * fact(e-1);
+        } else {
+            return 1;
+        }
+    }
+
+    int tower(int a, int b){
+        if (b == 0){
+            return 0;
+        }
+        if(b%2 == 0){ // if b is even
+            return tower(a*2,b/2); // no clue what exactly this is supposed to do
+        }
+        return a + tower(a*2,b/2);
+    }
+
     void resultsPower(){
         System.out.println("Please enter the double.");
         double b = scn2.nextDouble();
@@ -38,8 +56,22 @@ public class Main {
         System.out.println(fib(e));
     }
 
+    void resultsFact(){
+        System.out.println("Please enter an integer.");
+        int e = scn2.nextInt();
+        System.out.println(fact(e));
+    }
+
+    void resultsTower(){
+        System.out.println("Please enter an integer for a.");
+        int a = scn2.nextInt();
+        System.out.println("Please enter an integer for b.");
+        int b = scn2.nextInt();
+        System.out.println(tower(a,b));
+    }
+
     void option(){
-        System.out.println("Please enter 1 for calculating powers, 2 for knnchn");
+        System.out.println("Please enter \n1 for Power \n2 for Fib \n3 for Fact \n4 for Tower");
         int e = scn2.nextInt();
         switch(e){
             default -> System.out.println("Invalid option");
@@ -48,6 +80,12 @@ public class Main {
             }
             case 2 -> {
                 resultsFib();
+            }
+            case 3 -> {
+                resultsFact();
+            }
+            case 4 -> {
+                resultsTower();
             }
         }
     }
